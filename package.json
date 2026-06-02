@@ -30,11 +30,11 @@
   ],
   "homepage": "https://adwhispr.com",
   "bugs": {
-    "url": "https://github.com/basilnas/mcp-server/issues"
+    "url": "https://github.com/adwhispr/mcp-server/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/basilnas/mcp-server.git"
+    "url": "git+https://github.com/adwhispr/mcp-server.git"
   },
   "author": "AdWhispr",
   "license": "MIT",

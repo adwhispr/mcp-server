@@ -1,5 +1,7 @@
 # adwhispr-mcp-server
 
+[![smithery badge](https://smithery.ai/badge/basil/adwhispr)](https://smithery.ai/servers/basil/adwhispr)
+
 Chat with any brand's Meta ads inside Claude. This connects [Claude](https://claude.ai) to **[AdWhispr](https://adwhispr.com)** — research a competitor's Facebook/Instagram ad library, find their longest-running winners, and clone the creative for your own brand, all from a Claude conversation.
 
 It's a thin, open-source bridge to the AdWhispr remote MCP server (`https://adwhispr.com/api/mcp`). Sign-in happens automatically through your browser the first time.

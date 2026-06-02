@@ -82,7 +82,7 @@ To point at a different server (self-hosting/testing), set `ADWHISPR_MCP_URL`.
 
 - Website: https://adwhispr.com
 - Tutorial: *How to chat with any brand's Meta ads inside Claude in 90 seconds* — https://adwhispr.com/blog (coming soon)
-- Issues: https://github.com/adwhispr/mcp-server/issues
+- Issues: https://github.com/basilnas/mcp-server/issues
 
 ## License
 

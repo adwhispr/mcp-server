@@ -1,5 +1,5 @@
 {
-  "name": "@adwhispr/mcp-server",
+  "name": "adwhispr-mcp-server",
   "version": "0.1.0",
   "description": "Connect Claude to AdWhispr — research any brand's Meta ads, find their longest-running winners, and clone the creative. One-command setup for Claude Desktop.",
   "bin": {

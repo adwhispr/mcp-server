@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * @adwhispr/mcp-server
+ * adwhispr-mcp-server
  *
  * One-command setup that connects Claude (Desktop and other MCP clients) to
  * the AdWhispr remote MCP server. Under the hood it bridges Claude's local
@@ -10,9 +10,9 @@
  * also handles the OAuth sign-in (a browser window opens the first time).
  *
  * Usage:
- *   npx @adwhispr/mcp-server config   # add AdWhispr to Claude Desktop, then restart Claude
- *   npx @adwhispr/mcp-server serve    # run the stdio↔remote bridge (Claude calls this for you)
- *   npx @adwhispr/mcp-server help
+ *   npx adwhispr-mcp-server config   # add AdWhispr to Claude Desktop, then restart Claude
+ *   npx adwhispr-mcp-server serve    # run the stdio↔remote bridge (Claude calls this for you)
+ *   npx adwhispr-mcp-server help
  */
 
 const { spawn } = require('node:child_process');
@@ -37,7 +37,7 @@ function serve() {
     const rel = typeof binField === 'string' ? binField : binField['mcp-remote'] || Object.values(binField)[0];
     binPath = path.join(path.dirname(pkgJsonPath), rel);
   } catch (err) {
-    console.error('[adwhispr-mcp] Could not locate the mcp-remote bridge. Try reinstalling: npm i -g @adwhispr/mcp-server');
+    console.error('[adwhispr-mcp] Could not locate the mcp-remote bridge. Try reinstalling: npm i -g adwhispr-mcp-server');
     process.exit(1);
   }
 
@@ -107,13 +107,13 @@ function config() {
 }
 
 function serverEntry() {
-  // Self-reference: Claude Desktop runs `npx -y @adwhispr/mcp-server`, which
+  // Self-reference: Claude Desktop runs `npx -y adwhispr-mcp-server`, which
   // lands in serve() (stdin is not a TTY when Claude launches us) and starts
   // the bridge. Keeping the package name here means future updates flow
   // through automatically.
   const entry = {
     command: 'npx',
-    args: ['-y', '@adwhispr/mcp-server', 'serve'],
+    args: ['-y', 'adwhispr-mcp-server', 'serve'],
   };
   if (process.env.ADWHISPR_MCP_URL) {
     entry.env = { ADWHISPR_MCP_URL: process.env.ADWHISPR_MCP_URL };
@@ -126,12 +126,12 @@ function help() {
   AdWhispr MCP — chat with any brand's Meta ads inside Claude.
 
   Usage:
-    npx @adwhispr/mcp-server config    Add AdWhispr to Claude Desktop (then restart Claude)
-    npx @adwhispr/mcp-server serve     Run the stdio↔remote bridge (Claude runs this for you)
-    npx @adwhispr/mcp-server help       Show this help
-    npx @adwhispr/mcp-server version    Print version
+    npx adwhispr-mcp-server config    Add AdWhispr to Claude Desktop (then restart Claude)
+    npx adwhispr-mcp-server serve     Run the stdio↔remote bridge (Claude runs this for you)
+    npx adwhispr-mcp-server help       Show this help
+    npx adwhispr-mcp-server version    Print version
 
-  Most people just run:  npx @adwhispr/mcp-server config
+  Most people just run:  npx adwhispr-mcp-server config
 
   Server: ${MCP_URL}
   Learn more: https://adwhispr.com

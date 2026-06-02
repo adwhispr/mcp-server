@@ -1,4 +1,4 @@
-# @adwhispr/mcp-server
+# adwhispr-mcp-server
 
 Chat with any brand's Meta ads inside Claude. This connects [Claude](https://claude.ai) to **[AdWhispr](https://adwhispr.com)** — research a competitor's Facebook/Instagram ad library, find their longest-running winners, and clone the creative for your own brand, all from a Claude conversation.
 
@@ -9,7 +9,7 @@ It's a thin, open-source bridge to the AdWhispr remote MCP server (`https://adwh
 ## Install (Claude Desktop) — 3 steps
 
 ```bash
-npx @adwhispr/mcp-server config
+npx adwhispr-mcp-server config
 ```
 
 1. Run the command above. It adds AdWhispr to your Claude Desktop config.
@@ -31,7 +31,7 @@ Prefer to edit the config yourself? Add this to `claude_desktop_config.json`:
   "mcpServers": {
     "adwhispr": {
       "command": "npx",
-      "args": ["-y", "@adwhispr/mcp-server", "serve"]
+      "args": ["-y", "adwhispr-mcp-server", "serve"]
     }
   }
 }
@@ -44,7 +44,7 @@ Config file location:
 
 ### Other MCP clients
 
-Any MCP client that runs a stdio command works — point it at `npx -y @adwhispr/mcp-server serve`, or connect directly to the remote endpoint `https://adwhispr.com/api/mcp` if your client supports remote MCP servers with OAuth.
+Any MCP client that runs a stdio command works — point it at `npx -y adwhispr-mcp-server serve`, or connect directly to the remote endpoint `https://adwhispr.com/api/mcp` if your client supports remote MCP servers with OAuth.
 
 ---
 
@@ -74,7 +74,7 @@ Start a trial at [adwhispr.com/upgrade](https://adwhispr.com/upgrade).
 
 ## How it works
 
-Claude Desktop launches `npx -y @adwhispr/mcp-server serve`, which runs [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) pointed at `https://adwhispr.com/api/mcp`. That bridges Claude's local stdio transport to the AdWhispr server over HTTP and handles the OAuth login. Your ad data and account live on AdWhispr; this package stores nothing.
+Claude Desktop launches `npx -y adwhispr-mcp-server serve`, which runs [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) pointed at `https://adwhispr.com/api/mcp`. That bridges Claude's local stdio transport to the AdWhispr server over HTTP and handles the OAuth login. Your ad data and account live on AdWhispr; this package stores nothing.
 
 To point at a different server (self-hosting/testing), set `ADWHISPR_MCP_URL`.
 

@@ -1,0 +1,47 @@
+{
+  "name": "@adwhispr/mcp-server",
+  "version": "0.1.0",
+  "description": "Connect Claude to AdWhispr — research any brand's Meta ads, find their longest-running winners, and clone the creative. One-command setup for Claude Desktop.",
+  "bin": {
+    "adwhispr-mcp": "bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/cli.js serve"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "claude-desktop",
+    "anthropic",
+    "adwhispr",
+    "meta-ads",
+    "facebook-ads",
+    "ad-library",
+    "ad-spy",
+    "competitor-research",
+    "ad-intelligence",
+    "marketing"
+  ],
+  "homepage": "https://adwhispr.com",
+  "bugs": {
+    "url": "https://github.com/adwhispr/mcp-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adwhispr/mcp-server.git"
+  },
+  "author": "AdWhispr",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mcp-remote": "^0.1.38"
+  }
+}

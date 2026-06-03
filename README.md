@@ -80,6 +80,39 @@ Claude Desktop launches `npx -y adwhispr-mcp-server serve`, which runs [`mcp-rem
 
 To point at a different server (self-hosting/testing), set `ADWHISPR_MCP_URL`.
 
+---
+
+## Troubleshooting
+
+**AdWhispr doesn't appear in Claude after install.**
+Fully quit Claude Desktop (not just close the window) and reopen it — config is only read on startup. Confirm the entry exists in `claude_desktop_config.json` (paths above). On macOS/Linux make sure `npx` is on your `PATH`; if Claude can't find it, set the `command` to the absolute path from `which npx`.
+
+**The browser sign-in window never opens, or login loops.**
+The first tool call opens a browser to authorize via OAuth. If it doesn't appear, check that your default browser can open and that no firewall is blocking `localhost` callbacks. Clearing the stale auth cache fixes most loops:
+
+```bash
+rm -rf ~/.mcp-auth
+```
+
+Then restart Claude Desktop and trigger a tool call again.
+
+**"Authentication required" or tools return an auth error.**
+Your AdWhispr session expired or wasn't completed. Re-run the sign-in (clear `~/.mcp-auth` as above), or sign in directly at [adwhispr.com](https://adwhispr.com) first, then retry.
+
+**A tool returns an upgrade / out-of-quota / "locked clone" message.**
+That's expected on the Free tier (5 tool calls/month, 1 brand, 1 clone). The message includes an unlock link — open it to upgrade or buy a credit pack. Relay the link as-is; the clone is generated and waiting behind it.
+
+**`add_brand` says a brand isn't found, or `search_brands` returns nothing.**
+`add_brand` resolves brands from the Meta Ad Library by name — try the exact brand name as it appears on Facebook. After adding, ingestion runs in the background (~40s) before ads are queryable. `search_brands` only returns brands already tracked on your account.
+
+**Node / `npx` errors on launch.**
+Use Node 18+ (`node --version`). If an old cached package is misbehaving, force a fresh copy: `npx -y adwhispr-mcp-server@latest serve`.
+
+**Connecting a non-Claude-Desktop client.**
+Point any stdio MCP client at `npx -y adwhispr-mcp-server serve`, or connect directly to the remote endpoint `https://adwhispr.com/api/mcp` if your client supports remote MCP servers with OAuth.
+
+Still stuck? Open an issue at [github.com/adwhispr/mcp-server/issues](https://github.com/adwhispr/mcp-server/issues) or email basil@adwhispr.com.
+
 ## Links
 
 - Website: https://adwhispr.com

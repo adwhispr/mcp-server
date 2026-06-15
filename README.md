@@ -115,7 +115,7 @@ Still stuck? Open an issue at [github.com/adwhispr/mcp-server/issues](https://gi
 
 ## Links
 
-- Website: https://adwhispr.com
+- Website: https://adwhispr.com/connect?ref=mcp_directory
 - Tutorial: *How to chat with any brand's Meta ads inside Claude in 90 seconds* — https://adwhispr.com/blog (coming soon)
 - Issues: https://github.com/adwhispr/mcp-server/issues
 

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "com.adwhispr/adwhispr",
+  "description": "Competitor ad intelligence and campaign launch: research any brand's ads, clone proven winners for your brand, launch on Google and TikTok — via natural language.",
+  "version": "1.0.0",
+  "websiteUrl": "https://adwhispr.com",
+  "remotes": [{ "type": "streamable-http", "url": "https://adwhispr.com/api/mcp" }]
+}

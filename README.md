@@ -57,12 +57,13 @@ Any MCP client that runs a stdio command works — point it at `npx -y adwhispr-
 
 ---
 
-## Tools (27)
+## Tools (38)
 
 ### Research — competitor intelligence
 
 | Tool | What it does |
 |------|--------------|
+| `find_competitors` | Find brands **verified to be actively advertising right now** in your niche, ranked by live ad count — no guessing. |
 | `search_brands` | Find brands tracked in AdWhispr by name (returns ad counts + IDs). |
 | `add_brand` | Start tracking a new competitor brand (kicks off ad-library ingestion). |
 | `get_brand_ads` | A brand's ads with hooks, formats, days-running, and creative links. |
@@ -73,14 +74,21 @@ Any MCP client that runs a stdio command works — point it at `npx -y adwhispr-
 | `research_tiktok_ads` | Research a competitor's TikTok ads (video, thumbnails, run dates). |
 | `research_keywords` | Google keyword intelligence: volume, competition, CPC ranges. |
 | `research_competitor_keywords` | The keywords a competitor's domain ranks and bids on. |
-| `get_my_brand` / `save_my_brand` | Remember your product/brand so research is personalized. |
+| `get_my_brand` / `save_my_brand` / `clear_my_brand` | Remember your own product/brand so research and clones are personalized. |
+| `add_product` / `list_my_products` / `remove_product` | Your product catalog — powers per-product ads (Shopify import supported). |
 
-### Creative — clone the winners
+### Creative — clone the winners as image *or* video
 
 | Tool | What it does |
 |------|--------------|
-| `clone_ad` | Clone a competitor's winning Meta ad for your brand — a real generated image for image ads, a scene-by-scene script for video ads. |
+| `clone_ad` | Clone a competitor's winning Meta ad for your brand — a real generated image for image ads, a video for video ads. |
 | `clone_tiktok_ad` | Same, for a TikTok ad. |
+| `clone_video_ad` | Full video-ad clone with selectable model tiers (Seedance / Veo / Kling) — cheap drafts to premium finals. |
+| `clone_from_script` | Generate a video ad from your own script. |
+| `clone_from_concept` | Generate a video ad from a plain-English concept or brief. |
+| `revise_video_brief` | Tweak the shot list / brief before anything renders. |
+| `approve_video_clone` | Approve the brief to kick off the render (the confirm step — nothing generates until you do). |
+| `check_video_status` | Poll a video render and get the finished file. |
 | `list_my_creatives` | Your generated creatives, ready to launch. |
 
 ### Launch & manage — real campaigns
@@ -96,17 +104,19 @@ Any MCP client that runs a stdio command works — point it at `npx -y adwhispr-
 | `get_account_performance` | Real performance from your connected account. |
 | `update_budget` / `pause_campaign` / `resume_campaign` | Manage what's live. |
 
-Campaigns are created **paused by default** with an explicit confirm step before anything spends. AdWhispr never fabricates performance metrics — competitor research reports only signals that can be verified (days-running, not made-up ROAS).
+Campaigns are created **paused by default** with an explicit confirm step before anything spends — and video renders wait on `approve_video_clone`, so no credits burn until you say go. AdWhispr never fabricates performance metrics — competitor research reports only signals that can be verified (days-running, not made-up ROAS).
 
 ---
 
 ## Pricing
 
-Flat pricing — research tool calls are never metered on paid plans.
+Flat monthly plans with a generous call allowance — no per-call overage billing, ever.
 
-- **Free** — 5 tool calls/month, 1 tracked brand, 1 free clone. No card.
-- **Pro** — $39/mo: unlimited research calls, 10 clones/month.
-- **Agency** — $149/mo: multi-brand, 50 clones/month, cross-brand comparison.
+- **Free** — 15 agent calls/month, unlimited tracked brands, 1 free clone. No card.
+- **Pro** — $39/mo ($31/mo billed annually): 150 agent calls/month, 10 image clones + 10 video credits/month, launch on Google, TikTok & Meta, ad-script generation, competitor playbook, weekly new-ad alerts.
+- **Agency** — $149/mo ($119/mo billed annually): 3,000 agent calls/month, 50 image clones + 40 video credits/month, team seats, cross-brand comparison, client-ready reports.
+
+Video generation spends video credits (draft tiers cost the least, premium finals the most); extra clone and credit packs are available if you run dry.
 
 Full limits + trial at [adwhispr.com/upgrade](https://adwhispr.com/connect?ref=mcp_readme&utm_source=mcp_readme&utm_medium=readme&to=/upgrade).
 
@@ -138,7 +148,7 @@ Then restart Claude Desktop and trigger a tool call again.
 Your AdWhispr session expired or wasn't completed. Re-run the sign-in (clear `~/.mcp-auth` as above), or sign in directly at [adwhispr.com](https://adwhispr.com) first, then retry.
 
 **A tool returns an upgrade / out-of-quota / "locked clone" message.**
-That's expected on the Free tier (5 tool calls/month, 1 brand, 1 clone). The message includes an unlock link — open it to upgrade or buy a credit pack. Relay the link as-is; the clone is generated and waiting behind it.
+That's expected on the Free tier (15 agent calls/month, 1 free clone, video credits are paid-plan only). The message includes an unlock link — open it to upgrade or buy a credit pack. Relay the link as-is; the clone is generated and waiting behind it.
 
 **`add_brand` says a brand isn't found, or `search_brands` returns nothing.**
 `add_brand` resolves brands from the public ad library by name — try the exact brand name as it appears on Facebook. After adding, ingestion runs in the background (~40s) before ads are queryable. `search_brands` only returns brands already tracked on your account.

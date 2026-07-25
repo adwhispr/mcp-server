@@ -57,7 +57,7 @@ Any MCP client that runs a stdio command works — point it at `npx -y adwhispr-
 
 ---
 
-## Tools (38)
+## Tools
 
 ### Research — competitor intelligence
 

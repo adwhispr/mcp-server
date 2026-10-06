@@ -1,6 +1,6 @@
 {
   "name": "adwhispr-mcp-server",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Connect Claude to AdWhispr: research any brand's ads (Meta + TikTok), surface their longest-running winners, clone the creative as an image or video for your brand, and launch it on Google, TikTok, or Meta. One-command setup for Claude Desktop.",
   "bin": {
     "adwhispr-mcp": "bin/cli.js"

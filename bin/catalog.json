@@ -1,0 +1,662 @@
+{
+  "tools": [
+    {
+      "name": "get_my_brand",
+      "title": "Get my brand",
+      "description": "Show the brand you saved, so research and ads are tailored to your business.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Get my brand",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "save_my_brand",
+      "title": "Save my brand",
+      "description": "Save your brand from your website or a short description of what you sell.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Save my brand",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "clear_my_brand",
+      "title": "Clear my brand",
+      "description": "Remove your saved brand so you can start over with a different one.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Clear my brand",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "add_product",
+      "title": "Add a product",
+      "description": "Save one of your products from its product page, with its name, price and photos.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Add a product",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "list_my_products",
+      "title": "List my products",
+      "description": "List the products you have saved.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "List my products",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "remove_product",
+      "title": "Remove a product",
+      "description": "Remove a product you saved earlier.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Remove a product",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "find_competitors",
+      "title": "Find competitors",
+      "description": "Find the brands in your space that are advertising right now, ranked by how many ads they run.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Find competitors",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "search_brands",
+      "title": "Search brands",
+      "description": "Look up a brand by name to see whether its ads are available.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search brands",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "add_brand",
+      "title": "Track a brand",
+      "description": "Start tracking a brand so you can explore its ads.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Track a brand",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "get_brand_ads",
+      "title": "See a brand's ads",
+      "description": "See a brand's ads with the hook, format, copy and how long each one has been running.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "See a brand's ads",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_brand_stats",
+      "title": "Brand ad summary",
+      "description": "Get a summary of a brand's advertising: how many ads, which formats and how long they run.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Brand ad summary",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "search_ads",
+      "title": "Search ads by idea",
+      "description": "Search a brand's ads by idea, such as \"before and after\" or \"social proof\".",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search ads by idea",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "compare_brands",
+      "title": "Compare brands",
+      "description": "Compare the advertising of two or more brands side by side.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Compare brands",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "generate_brief",
+      "title": "Write a strategy brief",
+      "description": "Get a written brief on one brand's ad strategy.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Write a strategy brief",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_instagram_content",
+      "title": "See Instagram posts",
+      "description": "See a brand's recent Instagram posts and reels.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "See Instagram posts",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "research_tiktok_ads",
+      "title": "Research TikTok ads",
+      "description": "Find TikTok ads running for a brand or a topic.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Research TikTok ads",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "clone_tiktok_ad",
+      "title": "Script from a TikTok ad",
+      "description": "Turn a TikTok ad into a shot-by-shot script for your own product that you can film yourself.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Script from a TikTok ad",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "research_keywords",
+      "title": "Research keywords",
+      "description": "Get Google keyword ideas with search volume and cost estimates for a product or topic.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Research keywords",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "research_competitor_keywords",
+      "title": "Competitor keywords",
+      "description": "See the Google keywords a competitor's website shows up for.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Competitor keywords",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "clone_ad",
+      "title": "Clone an image ad",
+      "description": "Rebuild a competitor's image ad for your own brand and product.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Clone an image ad",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "clone_video_ad",
+      "title": "Clone a video ad",
+      "description": "Write a video ad for your brand based on a competitor's ad, a reel, a TikTok or your own video. You review the script first.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Clone a video ad",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "clone_from_script",
+      "title": "Video ad from a script",
+      "description": "Make a video ad for your brand from a script you wrote.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Video ad from a script",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "clone_from_concept",
+      "title": "Video ad from an idea",
+      "description": "Make a video ad for your brand from an idea described in plain English.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Video ad from an idea",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "revise_video_brief",
+      "title": "Change a video script",
+      "description": "Change a video ad's script, language or on-screen captions.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Change a video script",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "approve_video_clone",
+      "title": "Approve a video",
+      "description": "Approve a video script so the video gets made. Nothing is made until you approve.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Approve a video",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "check_video_status",
+      "title": "Check a video",
+      "description": "Check on a video ad that is being made and get the finished video.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Check a video",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_my_creatives",
+      "title": "List my creatives",
+      "description": "List the images and videos in your creative library.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "List my creatives",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "connect_ad_account",
+      "title": "Connect an ad account",
+      "description": "Get a link to connect your own ad account on Meta, Google, TikTok, X or ChatGPT Ads.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Connect an ad account",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "list_ad_accounts",
+      "title": "List ad accounts",
+      "description": "List the ad accounts you have connected.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "List ad accounts",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "inspect_ad_account",
+      "title": "Check an ad account",
+      "description": "Check whether a connected ad account is ready to run ads.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Check an ad account",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "list_campaigns",
+      "title": "List campaigns",
+      "description": "List the campaigns in a connected ad account and their status.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "List campaigns",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "get_account_performance",
+      "title": "See performance",
+      "description": "See real spend, clicks and conversions from your connected ad account.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "See performance",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "search_ad_targeting",
+      "title": "Look up targeting",
+      "description": "Look up targeting options for a campaign, such as interests, locations and audiences.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Look up targeting",
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "create_audience",
+      "title": "Create an audience",
+      "description": "Create an audience in your Meta account, such as website visitors or people similar to your customers.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Create an audience",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "launch_campaign",
+      "title": "Launch a campaign",
+      "description": "Create a new campaign in your connected ad account. It starts paused, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Launch a campaign",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "launch_meta_ad",
+      "title": "Launch a Meta ad",
+      "description": "Launch your own images or videos as a Facebook and Instagram ad. It starts paused, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Launch a Meta ad",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "launch_cloned_ad",
+      "title": "Launch a cloned ad",
+      "description": "Launch an image ad you cloned as a Facebook and Instagram ad. It starts paused, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Launch a cloned ad",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "launch_search_campaign",
+      "title": "Launch Google Search",
+      "description": "Launch a Google Search campaign with your keywords and ad text. It starts paused, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Launch Google Search",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "launch_pmax_campaign",
+      "title": "Launch Performance Max",
+      "description": "Launch a Google Performance Max campaign. It starts paused, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Launch Performance Max",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "launch_tiktok_campaign",
+      "title": "Launch a TikTok campaign",
+      "description": "Launch a TikTok campaign with your video. It starts paused, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Launch a TikTok campaign",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "create_ad_group",
+      "title": "Add an ad group",
+      "description": "Add an ad group, or more ads, to a campaign you already have.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Add an ad group",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "update_keywords",
+      "title": "Update keywords",
+      "description": "Add, pause or remove keywords in a Google Search campaign.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Update keywords",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "add_negative_keywords",
+      "title": "Add negative keywords",
+      "description": "Stop a Google campaign from showing on searches you do not want.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Add negative keywords",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "update_campaign_locations",
+      "title": "Change locations",
+      "description": "Change the places a campaign shows in.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Change locations",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "update_budget",
+      "title": "Change a budget",
+      "description": "Change a campaign's daily budget, after you confirm a preview.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Change a budget",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "pause_campaign",
+      "title": "Pause a campaign",
+      "description": "Pause a running campaign so it stops spending.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Pause a campaign",
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "resume_campaign",
+      "title": "Resume a campaign",
+      "description": "Turn a paused campaign back on, after you confirm.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Resume a campaign",
+        "readOnlyHint": false
+      }
+    }
+  ]
+}

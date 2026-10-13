@@ -122,6 +122,8 @@ Claude Desktop runs `npx -y adwhispr-mcp-server serve`, which starts [`mcp-remot
 
 To point at a different server for testing, set `ADWHISPR_MCP_URL`.
 
+`npx adwhispr-mcp-server catalog` lists what AdWhispr can do without signing in. It is there for directories that inspect the server automatically. Running anything still needs `serve` and a sign-in.
+
 ---
 
 ## Troubleshooting

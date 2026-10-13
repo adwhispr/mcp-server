@@ -12,6 +12,7 @@
  * Usage:
  *   npx adwhispr-mcp-server config   # add AdWhispr to Claude Desktop, then restart Claude
  *   npx adwhispr-mcp-server serve    # run the stdio↔remote bridge (Claude calls this for you)
+ *   npx adwhispr-mcp-server catalog  # sign-in-free tool list, for directories that inspect the server
  *   npx adwhispr-mcp-server help
  */
 
@@ -47,6 +48,60 @@ function serve() {
     console.error('[adwhispr-mcp] Failed to start bridge:', err.message);
     process.exit(1);
   });
+}
+
+// ----------------------------------------------------------------------------
+// Catalog: a sign-in-free stdio MCP server that only DESCRIBES what AdWhispr
+// can do (bin/catalog.json). Directories that inspect a server in a container
+// cannot complete the browser sign-in `serve` needs, so they run this instead.
+// It answers the handshake and the tool list; running a tool needs `serve`.
+// ----------------------------------------------------------------------------
+function catalog() {
+  const { tools } = require('./catalog.json');
+  const SIGN_IN =
+    'Sign in to use AdWhispr. Run `npx adwhispr-mcp-server config` for Claude Desktop, ' +
+    'or see https://adwhispr.com/integrations for every other app.';
+  const send = (msg) => process.stdout.write(JSON.stringify(msg) + '\n');
+
+  const handle = (msg) => {
+    if (!msg || msg.id === undefined || msg.id === null) return; // notification
+    const reply = (result) => send({ jsonrpc: '2.0', id: msg.id, result });
+    switch (msg.method) {
+      case 'initialize':
+        return reply({
+          protocolVersion: (msg.params && msg.params.protocolVersion) || '2025-06-18',
+          capabilities: { tools: {} },
+          serverInfo: { name: 'adwhispr', title: 'AdWhispr', version: PKG.version },
+          instructions: SIGN_IN,
+        });
+      case 'ping':
+        return reply({});
+      case 'tools/list':
+        return reply({ tools });
+      case 'tools/call':
+        return reply({ content: [{ type: 'text', text: SIGN_IN }], isError: true });
+      default:
+        return send({ jsonrpc: '2.0', id: msg.id, error: { code: -32601, message: 'Method not found' } });
+    }
+  };
+
+  let buffer = '';
+  process.stdin.setEncoding('utf8');
+  process.stdin.on('data', (chunk) => {
+    buffer += chunk;
+    let nl;
+    while ((nl = buffer.indexOf('\n')) !== -1) {
+      const line = buffer.slice(0, nl).trim();
+      buffer = buffer.slice(nl + 1);
+      if (!line) continue;
+      try {
+        handle(JSON.parse(line));
+      } catch (err) {
+        send({ jsonrpc: '2.0', id: null, error: { code: -32700, message: 'Parse error' } });
+      }
+    }
+  });
+  process.stdin.on('end', () => process.exit(0));
 }
 
 // ----------------------------------------------------------------------------
@@ -128,6 +183,7 @@ function help() {
   Usage:
     npx adwhispr-mcp-server config    Add AdWhispr to Claude Desktop (then restart Claude)
     npx adwhispr-mcp-server serve     Run the stdio↔remote bridge (Claude runs this for you)
+    npx adwhispr-mcp-server catalog   List what AdWhispr can do, without signing in
     npx adwhispr-mcp-server help       Show this help
     npx adwhispr-mcp-server version    Print version
 
@@ -152,6 +208,9 @@ switch (cmd) {
   case 'serve':
   case 'start':
     serve();
+    break;
+  case 'catalog':
+    catalog();
     break;
   case 'version':
   case '--version':
